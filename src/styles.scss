@@ -6,3 +6,96 @@
 body {
   background: url("./assets/bg.png") #fafafa center fixed;
 }
+
+// About Page
+.about {
+  background: $white;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+
+  section {
+    padding: 30px;
+    &.bg-gray {
+      background: $gray-100;
+    }
+    &:not(:last-of-type) {
+      border-bottom: dashed thin $gray-500;
+    }
+
+    h2.section-title {
+      font-size: 18px;
+      margin-bottom: 0px;
+    }
+  }
+}
+
+// Resume Page
+.resume {
+  background: $white;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+
+  section {
+    padding: 30px;
+    border-bottom: dashed thin $gray-500;
+    &.bg-gray {
+      background: $gray-100;
+    }
+
+    h2.section-title {
+      font-size: 18px;
+      margin-bottom: 0px;
+    }
+  }
+}
+
+// Portfolio Page
+.portfolio {
+  background: $white;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+
+  section {
+    padding: 30px;
+    &.bg-gray {
+      background: $gray-100;
+    }
+    &:not(:last-of-type) {
+      border-bottom: dashed thin $gray-500;
+    }
+
+    &:first-of-type {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    h2.section-title {
+      font-size: 18px;
+      margin-bottom: 0px;
+    }
+  }
+}
+
+// Contact Page
+.contact {
+  background: $white;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+
+  section {
+    padding: 30px;
+    &.row {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    &:not(:last-of-type) {
+      border-bottom: dashed thin $gray-500;
+    }
+
+    h2.section-title {
+      font-size: 18px;
+      margin-bottom: 0px;
+    }
+  }
+}

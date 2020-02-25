@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="resume">
     <section>
       <h2 class="section-title">My Resume</h2>
     </section>
@@ -63,24 +63,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss" scoped>
-.about {
-  background: $white;
-  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-
-  section {
-    padding: 30px;
-    border-bottom: dashed thin $gray-500;
-    &.bg-gray {
-      background: $gray-100;
-    }
-
-    h2.section-title {
-      font-size: 18px;
-      margin-bottom: 0px;
-    }
-  }
-}
-</style>

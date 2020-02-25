@@ -45,27 +45,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss" scoped>
-.contact {
-  background: $white;
-  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-
-  section {
-    padding: 30px;
-    &.row {
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-    &:not(:last-of-type) {
-      border-bottom: dashed thin $gray-500;
-    }
-
-    h2.section-title {
-      font-size: 18px;
-      margin-bottom: 0px;
-    }
-  }
-}
-</style>
