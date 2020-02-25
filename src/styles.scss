@@ -1,0 +1,8 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "./assets/variables";
+@import "./assets/bootswatch";
+@import "node_modules/bootstrap-vue/src/index.scss";
+
+body {
+  background: url("./assets/bg.png") #fafafa center fixed;
+}
