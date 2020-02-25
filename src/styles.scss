@@ -27,6 +27,53 @@ body {
       margin-bottom: 0px;
     }
   }
+
+  .personal-details {
+    h2.personal-title {
+      font-size: 18px;
+    }
+
+    p.personal-text {
+      color: $gray-600;
+      margin-bottom: 1.5rem;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  p.info-text {
+    margin: 0.5em 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: $gray-600;
+
+    span:nth-child(1) {
+      font-weight: bold;
+      color: $dark;
+      &::after {
+        content: ":";
+      }
+    }
+
+    a.info-link {
+      color: $gray-600;
+      text-decoration: none;
+    }
+  }
+
+  .progress {
+    height: 8px;
+    margin: 0.5rem 0;
+    border-radius: 4px;
+    border: solid thin $primary;
+  }
+
+  h2.personal-title {
+    font-size: 18px;
+    margin-bottom: 0.5em;
+  }
 }
 
 // Resume Page
@@ -97,5 +144,122 @@ body {
       font-size: 18px;
       margin-bottom: 0px;
     }
+  }
+
+  .contact-form {
+    h2.section-title {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    form {
+      .form-group {
+        margin: 1rem 0;
+        &:first-of-type {
+          margin-top: 0;
+        }
+
+        input.form-control,
+        textarea.form-control {
+          padding: 0 5px;
+          height: 3rem;
+          border: solid thin $gray-500;
+          box-shadow: none;
+
+          &:focus {
+            box-shadow: none;
+          }
+        }
+        textarea.form-control {
+          height: auto;
+          padding-top: 5px;
+          padding-bottom: 5px;
+        }
+      }
+
+      button.btn {
+        border-radius: 0px;
+        box-shadow: none;
+        background: lighten($color: $primary, $amount: 10%);
+        &:hover {
+          background: $primary;
+        }
+      }
+    }
+  }
+
+  .contact-info {
+    h2.section-title {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    #basic-info.nav {
+      .navbar-text {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: $gray-600;
+
+        span:nth-child(1) {
+          font-weight: bold;
+          color: $dark;
+          &::after {
+            content: ":";
+          }
+        }
+
+        a.contact-link {
+          color: $gray-600;
+          text-decoration: none;
+        }
+      }
+    }
+
+    #social-info.nav {
+      margin: 1rem 0;
+      .nav-item {
+        &.github {
+          .nav-link {
+            color: $gray-600;
+            transition: all ease-in-out 0.5s;
+            &:hover {
+              color: #4078c0;
+            }
+          }
+        }
+
+        &.linkedin {
+          .nav-link {
+            color: $gray-600;
+            transition: all ease-in-out 0.5s;
+            &:hover {
+              color: #00a0dc;
+            }
+          }
+        }
+
+        &.facebook {
+          .nav-link {
+            color: $gray-600;
+            transition: all ease-in-out 0.5s;
+            &:hover {
+              color: #3b5998;
+            }
+          }
+        }
+
+        .nav-link {
+          span.fab {
+            font-size: 1.5em;
+          }
+        }
+      }
+    }
+  }
+
+  .leaflet-map {
+    min-height: 350px;
+    height: 400px;
   }
 }

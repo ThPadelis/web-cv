@@ -16,19 +16,3 @@ export default {
   name: "personal-details"
 };
 </script>
-
-<style lang="scss" scoped>
-.personal-details {
-  h2.personal-title {
-    font-size: 18px;
-  }
-
-  p.personal-text {
-    color: $gray-600;
-    margin-bottom: 1.5rem;
-    &:last-of-type {
-      margin-bottom: 0;
-    }
-  }
-}
-</style>

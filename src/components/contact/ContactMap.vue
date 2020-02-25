@@ -46,10 +46,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss" scoped>
-.leaflet-map {
-  min-height: 350px;
-  height: 400px;
-}
-</style>

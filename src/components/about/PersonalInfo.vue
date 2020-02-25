@@ -42,26 +42,3 @@ export default {
   })
 };
 </script>
-
-<style lang="scss" scoped>
-p.info-text {
-  margin: 0.5em 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  color: $gray-600;
-
-  span:nth-child(1) {
-    font-weight: bold;
-    color: $dark;
-    &::after {
-      content: ":";
-    }
-  }
-
-  a.info-link {
-    color: $gray-600;
-    text-decoration: none;
-  }
-}
-</style>

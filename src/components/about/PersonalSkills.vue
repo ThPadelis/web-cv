@@ -21,17 +21,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss" scoped>
-.progress {
-  height: 8px;
-  margin: 0.5rem 0;
-  border-radius: 4px;
-  border: solid thin $primary;
-}
-
-h2.personal-title {
-  font-size: 18px;
-  margin-bottom: 0.5em;
-}
-</style>
