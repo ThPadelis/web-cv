@@ -122,6 +122,16 @@ body {
       margin-bottom: 0px;
     }
   }
+
+  ul.portfolio-filters {
+    li.navbar-text {
+      padding: 0.5em 1em;
+      &:hover {
+        cursor: pointer;
+        color: $primary;
+      }
+    }
+  }
 }
 
 // Contact Page
