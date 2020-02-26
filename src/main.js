@@ -6,10 +6,12 @@ import "./utils/vueFilters";
 import "leaflet/dist/leaflet.css";
 import { BootstrapVue } from "bootstrap-vue";
 import { HTTP } from "./utils/axios";
+import Meta from "vue-meta";
 
 Vue.use(BootstrapVue);
 Vue.config.productionTip = false;
 Vue.prototype.$http = HTTP;
+Vue.use(Meta);
 
 new Vue({
   router,

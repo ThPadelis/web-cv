@@ -4,11 +4,12 @@
       <h2 class="section-title">Portfolio</h2>
       <b-nav class="portfolio-filters">
         <b-nav-text
-          v-for="(f,i) in filters"
+          v-for="(f, i) in filters"
           :key="i"
           @click="filterBy(f.id)"
-          :class="activeFilter === f.id? 'text-primary':'text-muted'"
-        >{{f.text}}</b-nav-text>
+          :class="activeFilter === f.id ? 'text-primary' : 'text-muted'"
+          >{{ f.text }}</b-nav-text
+        >
       </b-nav>
     </section>
     <b-container tag="section">
@@ -40,32 +41,26 @@ export default {
     repos: null
   }),
   mounted() {
-    this.getRepos()
-      .then(repos => {
-        this.repos = [...repos].filter(
-          repo => repo.owner.login === process.env.VUE_APP_GITHUB_USER
-        );
-        console.log(JSON.stringify(this.repos[0], null, 2));
-      })
-      .catch(error => console.log(JSON.stringify(error, null, 2)));
+    this.getRepos().then(repos => {
+      this.repos = [...repos].filter(
+        repo => repo.owner.login === process.env.VUE_APP_GITHUB_USER
+      );
+    });
   },
   methods: {
     filterBy(id) {
       switch (id) {
         case 1:
           this.activeFilter = id;
-          console.log("Fetch all projects", id);
           break;
         case 2:
           this.activeFilter = id;
-          console.log("Development", id);
           break;
         case 3:
           this.activeFilter = id;
-          console.log("Web Design", id);
           break;
         default:
-          console.log("Fetch all projects");
+          this.activeFilter = 1;
           break;
       }
     },

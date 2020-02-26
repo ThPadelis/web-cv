@@ -14,7 +14,7 @@
           <a :href="`mailto:${c.text}`" class="contact-link">{{c.text}}</a>
         </template>
         <template v-else-if="c.title === 'Skype'">
-          <a :href="c.to" target="_blank" class="contact-link">{{c.text}}</a>
+          <a :href="c.to" target="_blank" class="contact-link" rel="noopener">{{c.text}}</a>
         </template>
         <template v-else>
           <span>{{c.text}}</span>

@@ -23,6 +23,9 @@ export default {
       import(
         /* webpackChunkName: "user-card" */ "@/components/shared/UserCard.vue"
       )
+  },
+  metaInfo: {
+    titleTemplate: "%s ← Padelis Theodosiou | Software Developer"
   }
 };
 </script>

@@ -10,7 +10,10 @@
       <personal-details></personal-details>
     </section>
     <section>
-      <personal-skills :skills="technical" title="Techical skills"></personal-skills>
+      <personal-skills
+        :skills="technical"
+        title="Techical skills"
+      ></personal-skills>
     </section>
     <section>
       <personal-skills :skills="soft" title="Soft skills"></personal-skills>
@@ -22,6 +25,7 @@
 </template>
 
 <script>
+import { metas } from "../utils/metas";
 export default {
   name: "about",
   components: {
@@ -58,6 +62,48 @@ export default {
       { title: "Accountability", value: 90, max: 100 },
       { title: "Creativity", value: 70, max: 100 }
     ]
-  })
+  }),
+  metaInfo: {
+    // Children can override the title.
+    title: metas.about.title,
+    // Define meta tags here.
+    meta: [
+      { name: "description", content: metas.about.description },
+      {
+        property: "og:title",
+        content: "About me ← Padelis Theodosiou | Software Developer"
+      },
+      {
+        property: "og:site_name",
+        content: "Padelis Theodosiou | Software Developer"
+      },
+      { property: "og:type", content: "website" },
+      {
+        property: "og:url",
+        content: window.location.href
+      },
+      { property: "og:description", content: metas.about.description },
+
+      // Twitter card
+      { name: "twitter:card", content: "summary" },
+      {
+        name: "twitter:site",
+        content: window.location.href
+      },
+      {
+        name: "twitter:title",
+        content: "About me ← Padelis Theodosiou | Software Developer"
+      },
+      {
+        name: "twitter:description",
+        content: metas.about.description
+      },
+      {
+        itemprop: "name",
+        content: "About me ← Padelis Theodosiou | Software Developer"
+      },
+      { itemprop: "description", content: metas.about.description }
+    ]
+  }
 };
 </script>
