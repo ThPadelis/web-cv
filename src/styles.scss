@@ -7,6 +7,16 @@ body {
   background: url("./assets/bg.png") #fafafa center fixed;
 }
 
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
 // About Page
 .about {
   background: $white;

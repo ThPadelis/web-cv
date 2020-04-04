@@ -4,9 +4,14 @@
 
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav fill justified class="w-100">
-        <b-nav-item v-for="(n,i) in navItems" :key="i" :to="n.to" active-class="active-item">
+        <b-nav-item
+          v-for="(n, i) in navItems"
+          :key="i"
+          :to="n.to"
+          active-class="active-item"
+        >
           <span :class="n.icon" class="mr-1"></span>
-          <span>{{n.text}}</span>
+          <span>{{ n.text }}</span>
         </b-nav-item>
       </b-navbar-nav>
     </b-collapse>
@@ -22,9 +27,9 @@ export default {
       { to: "/resume", text: "Resume", icon: "far fa-file-alt" },
       { to: "/portfolio", text: "Portfolio", icon: "far fa-image" },
       { to: "/blog", text: "Blog", icon: "far fa-comments" },
-      { to: "/contact", text: "Contact", icon: "fa fa-map-marker-alt" }
-    ]
-  })
+      { to: "/contact", text: "Contact", icon: "fa fa-map-marker-alt" },
+    ],
+  }),
 };
 </script>
 

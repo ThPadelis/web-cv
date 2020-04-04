@@ -1,18 +1,27 @@
 <template>
   <b-card
     no-body
-    img-src="https://picsum.photos/600/800/?image=25"
-    img-alt="Image"
+    :img-src="require('@/assets/IMG_4479.jpg')"
+    img-alt="me-profile"
     img-top
     class="mb-3"
+    v-sticky="{ zIndex: 1, stickyTop: 65 }"
   >
     <b-card-body>
       <b-card-title class="text-center">Padelis Theodosiou</b-card-title>
-      <b-card-sub-title class="text-center text-muted">Software Developer</b-card-sub-title>
+      <b-card-sub-title class="text-center text-muted"
+        >Software Developer</b-card-sub-title
+      >
     </b-card-body>
     <b-card-footer>
       <b-nav fill justified>
-        <b-nav-item v-for="(s,i) in socials" :key="i" :href="s.to" target="_blank" :class="s.class">
+        <b-nav-item
+          v-for="(s, i) in socials"
+          :key="i"
+          :href="s.to"
+          target="_blank"
+          :class="s.class"
+        >
           <span :class="s.icon"></span>
         </b-nav-item>
       </b-nav>
@@ -21,27 +30,31 @@
 </template>
 
 <script>
+import VueSticky from "vue-sticky";
 export default {
+  directives: {
+    sticky: VueSticky,
+  },
   name: "user-card",
   data: () => ({
     socials: [
       {
         to: "https://github.com/thpadelis",
         icon: "fab fa-github",
-        class: "github"
+        class: "github",
       },
       {
         to: "https://www.linkedin.com/in/padelis-theodosiou/",
         icon: "fab fa-linkedin-in",
-        class: "linkedin"
+        class: "linkedin",
       },
       {
         to: "https://www.facebook.com/padelis.theodosiou",
         icon: "fab fa-facebook",
-        class: "facebook"
-      }
-    ]
-  })
+        class: "facebook",
+      },
+    ],
+  }),
 };
 </script>
 

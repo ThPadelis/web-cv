@@ -1,20 +1,46 @@
 <template>
-  <b-container>
-    <b-row>
-      <b-col sm="12" md="4" lg="3" xl="3">
-        <user-card></user-card>
-      </b-col>
-      <b-col sm="12" md="8" lg="9" xl="9">
-        <navbar></navbar>
-        <router-view />
-      </b-col>
-    </b-row>
-  </b-container>
+  <div>
+    <b-container>
+      <b-row>
+        <b-col sm="12" md="4" lg="3" xl="3">
+          <user-card></user-card>
+        </b-col>
+        <b-col sm="12" md="8" lg="9" xl="9">
+          <navbar></navbar>
+          <router-view />
+        </b-col>
+      </b-row>
+    </b-container>
+
+    <transition name="fade" mode="out-in">
+      <to-top v-if="showBtn" key="1"></to-top>
+    </transition>
+  </div>
 </template>
 
 <script>
 export default {
   name: "app",
+  data: () => ({
+    showBtn: false,
+  }),
+  created() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
+  methods: {
+    handleScroll() {
+      var scrollPos = window.scrollY;
+      var winHeight = window.innerHeight;
+      var docHeight = document.documentElement.scrollHeight;
+      var perc = (100 * scrollPos) / (docHeight - winHeight);
+
+      if (perc > 10) this.showBtn = true;
+      else this.showBtn = false;
+    },
+  },
   components: {
     Navbar: () =>
       import(/* webpackChunkName: "navbar" */ "@/components/shared/Navbar.vue"),
@@ -22,11 +48,15 @@ export default {
     UserCard: () =>
       import(
         /* webpackChunkName: "user-card" */ "@/components/shared/UserCard.vue"
-      )
+      ),
+    ToTop: () =>
+      import(
+        /* webpackChunkName: "to-top" */ "@/components/shared/TopArrow.vue"
+      ),
   },
   metaInfo: {
-    titleTemplate: "%s ← Padelis Theodosiou | Software Developer"
-  }
+    titleTemplate: "%s ← Padelis Theodosiou | Software Developer",
+  },
 };
 </script>
 
