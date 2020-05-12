@@ -6,37 +6,46 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    redirect: "/about"
+    redirect: "/about",
   },
   {
     path: "/about",
     name: "About",
-    component: () => import(/* webpackChunkName: "about" */ "@/views/About.vue")
+    component: () =>
+      import(/* webpackChunkName: "about" */ "@/views/About.vue"),
   },
   {
     path: "/resume",
     name: "Resume",
     component: () =>
-      import(/* webpackChunkName: "resume" */ "@/views/Resume.vue")
+      import(/* webpackChunkName: "resume" */ "@/views/Resume.vue"),
   },
   {
     path: "/portfolio",
     name: "Portfolio",
     component: () =>
-      import(/* webpackChunkName: "portfolio" */ "@/views/Portfolio.vue")
+      import(/* webpackChunkName: "portfolio" */ "@/views/Portfolio.vue"),
+  },
+  {
+    path: "/portfolio/:id",
+    name: "Single Portfolio Item",
+    component: () =>
+      import(
+        /* webpackChunkName: "single-portfolio-item" */ "@/views/SinglePortfolio.vue"
+      ),
   },
   {
     path: "/contact",
     name: "Contact",
     component: () =>
-      import(/* webpackChunkName: "contact" */ "@/views/Contact.vue")
-  }
+      import(/* webpackChunkName: "contact" */ "@/views/Contact.vue"),
+  },
 ];
 
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
-  routes
+  routes,
 });
 
 export default router;
