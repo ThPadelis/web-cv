@@ -7,14 +7,19 @@
           v-for="(f, i) in filters"
           :key="i"
           @click="filterBy(f.id)"
-          :class="activeFilter === f.id ? 'text-primary' : 'text-muted'"
+          :class="activeFilter === f.id ? 'text-primary border-bottom border-primary' : 'text-muted border-bottom-0'"
         >{{ f.text }}</b-nav-text>
       </b-nav>
     </section>
     <b-container tag="section">
-      <b-row>
+      <b-row v-if="!isLoading">
         <b-col sm="12" md="6" lg="4" xl="4" v-for="(r, i) in filteredRepos" :key="i">
           <portfolio-preview :repo="r"></portfolio-preview>
+        </b-col>
+      </b-row>
+      <b-row v-else>
+        <b-col sm="12" md="12" lg="12" xl="12">
+          <loader></loader>
         </b-col>
       </b-row>
     </b-container>
@@ -28,7 +33,9 @@ export default {
     PortfolioPreview: () =>
       import(
         /* webpackChunkName: "portfolio-preview" */ "@/components/portfolio/PortfolioPreview.vue"
-      )
+      ),
+    Loader: () =>
+      import(/* webpackChunkName: "loader" */ "@/components/shared/Loader.vue")
   },
   data: () => ({
     filters: [
@@ -36,9 +43,10 @@ export default {
       { id: 2, text: "Mine" },
       { id: 3, text: "Collaborator" }
     ],
-    activeFilter: 1,
+    activeFilter: 2,
     repos: null,
-    filteredRepos: []
+    filteredRepos: [],
+    isLoading: true
   }),
   async mounted() {
     this.repos = await this.getRepos();
@@ -71,7 +79,9 @@ export default {
     },
     async getRepos() {
       try {
+        this.isLoading = true;
         const { data } = await this.$http.get("/user/repos");
+        this.isLoading = false;
         return new Promise(resolve => {
           resolve(data);
         });
@@ -84,3 +94,9 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.border-bottom {
+  border-width: 2px !important;
+}
+</style>
