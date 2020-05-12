@@ -8,13 +8,12 @@
           :key="i"
           @click="filterBy(f.id)"
           :class="activeFilter === f.id ? 'text-primary' : 'text-muted'"
-          >{{ f.text }}</b-nav-text
-        >
+        >{{ f.text }}</b-nav-text>
       </b-nav>
     </section>
     <b-container tag="section">
       <b-row>
-        <b-col sm="12" md="6" lg="4" xl="4" v-for="(r, i) in repos" :key="i">
+        <b-col sm="12" md="6" lg="4" xl="4" v-for="(r, i) in filteredRepos" :key="i">
           <portfolio-preview :repo="r"></portfolio-preview>
         </b-col>
       </b-row>
@@ -34,33 +33,39 @@ export default {
   data: () => ({
     filters: [
       { id: 1, text: "All" },
-      { id: 2, text: "Development" },
-      { id: 3, text: "Web Design" }
+      { id: 2, text: "Mine" },
+      { id: 3, text: "Collaborator" }
     ],
     activeFilter: 1,
-    repos: null
+    repos: null,
+    filteredRepos: []
   }),
-  mounted() {
-    this.getRepos().then(repos => {
-      this.repos = [...repos].filter(
-        repo => repo.owner.login === process.env.VUE_APP_GITHUB_USER
-      );
-    });
+  async mounted() {
+    this.repos = await this.getRepos();
+    this.filteredRepos = [...this.repos];
   },
   methods: {
     filterBy(id) {
       switch (id) {
         case 1:
           this.activeFilter = id;
+          this.filteredRepos = [...this.repos];
           break;
         case 2:
           this.activeFilter = id;
+          this.filteredRepos = [...this.repos].filter(
+            repo => repo.owner.login === process.env.VUE_APP_GITHUB_USER
+          );
           break;
         case 3:
           this.activeFilter = id;
+          this.filteredRepos = [...this.repos].filter(
+            repo => repo.owner.login !== process.env.VUE_APP_GITHUB_USER
+          );
           break;
         default:
           this.activeFilter = 1;
+          this.filteredRepos = [...this.repos];
           break;
       }
     },

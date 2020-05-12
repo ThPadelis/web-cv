@@ -24,6 +24,7 @@ export default {
 <style lang="scss" scoped>
 .portfolio-preview {
   margin-bottom: 1em;
+  margin-top: 1em;
 
   .portfolio-inner {
     position: relative;
