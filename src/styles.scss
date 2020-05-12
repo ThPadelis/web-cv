@@ -239,6 +239,11 @@ body {
     #social-info.nav {
       margin: 1rem 0;
       .nav-item {
+        &:first-of-type {
+          .nav-link {
+            padding-left: 0;
+          }
+        }
         &.github {
           .nav-link {
             color: $gray-600;

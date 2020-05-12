@@ -22,7 +22,7 @@
 export default {
   name: "app",
   data: () => ({
-    showBtn: false,
+    showBtn: false
   }),
   created() {
     window.addEventListener("scroll", this.handleScroll);
@@ -39,7 +39,7 @@ export default {
 
       if (perc > 10) this.showBtn = true;
       else this.showBtn = false;
-    },
+    }
   },
   components: {
     Navbar: () =>
@@ -52,11 +52,11 @@ export default {
     ToTop: () =>
       import(
         /* webpackChunkName: "to-top" */ "@/components/shared/TopArrow.vue"
-      ),
+      )
   },
   metaInfo: {
-    titleTemplate: "%s ← Padelis Theodosiou | Software Developer",
-  },
+    titleTemplate: "%s ← Padelis Theodosiou | Software Developer"
+  }
 };
 </script>
 

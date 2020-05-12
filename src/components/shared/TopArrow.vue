@@ -12,10 +12,10 @@ export default {
       window.scroll({
         top: 0,
         left: 0,
-        behavior: "smooth",
+        behavior: "smooth"
       });
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -24,5 +24,6 @@ button {
   position: fixed;
   bottom: 1.5rem;
   right: 1.5rem;
+  z-index: 1100;
 }
 </style>
