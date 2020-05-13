@@ -2,7 +2,7 @@
   <div class="portfolio-preview">
     <div class="portfolio-inner">
       <div class="portfolio-overlay">
-        <h3>{{repo.name}}</h3>
+        <h3>{{repo.name | replace("-", " ") | capitalize(true)}}</h3>
         <p>{{repo.created_at | moment}}</p>
         <div>
           <router-link :to="`/portfolio/${repo.id}`" class="portfolio-link">
@@ -49,14 +49,6 @@ export default {
       &:hover {
         opacity: 1;
         background: rgba($color: #000000, $alpha: 0.75);
-
-        .portfolio-link {
-          -moz-transform: translateY(0);
-          -webkit-transform: translateY(0);
-          -o-transform: translateY(0);
-          -ms-transform: translateY(0);
-          transform: translateY(0);
-        }
       }
 
       > h3 {
@@ -79,16 +71,6 @@ export default {
         padding-top: 12px;
         margin-top: 10px;
         margin-right: 7px;
-        -webkit-transition: all 0.5s ease;
-        -moz-transition: all 0.5s ease;
-        -ms-transition: all 0.5s ease;
-        -o-transition: all 0.5s ease;
-        transition: all 0.5s ease;
-        -moz-transform: translateY(200px);
-        -webkit-transform: translateY(200px);
-        -o-transform: translateY(200px);
-        -ms-transform: translateY(200px);
-        transform: translateY(200px);
         color: #ffffff !important;
         border: solid 1px;
         border: solid 1px #a5a5a5;

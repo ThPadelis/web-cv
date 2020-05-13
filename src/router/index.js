@@ -27,14 +27,6 @@ const routes = [
       import(/* webpackChunkName: "portfolio" */ "@/views/Portfolio.vue"),
   },
   {
-    path: "/portfolio/:id",
-    name: "Single Portfolio Item",
-    component: () =>
-      import(
-        /* webpackChunkName: "single-portfolio-item" */ "@/views/SinglePortfolio.vue"
-      ),
-  },
-  {
     path: "/contact",
     name: "Contact",
     component: () =>
