@@ -7,11 +7,11 @@
           <p>{{repo.created_at | moment}}</p>
           <div>
             <button v-b-modal="id" class="btn portfolio-link rounded-0">
-              <span class="fab fa-lg fa-github"></span>
+              <span class="fab fa-github"></span>
             </button>
           </div>
         </div>
-        <img src="https://picsum.photos/350" alt="a" class="img-fluid" />
+        <img :src="require('@/assets/project-image.jpg')" alt="a" class="img-fluid" />
       </div>
     </div>
 
