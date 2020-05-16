@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import { metas } from "../utils/metas";
 import * as moment from "moment";
 export default {
   name: "resume",
@@ -60,6 +61,48 @@ export default {
       import(
         /* webpackChunkName: "app-footer" */ "@/components/shared/Footer.vue"
       )
+  },
+  metaInfo: {
+    // Children can override the title.
+    title: metas.resume.title,
+    // Define meta tags here.
+    meta: [
+      { name: "description", content: metas.resume.description },
+      {
+        property: "og:title",
+        content: "Resume ← Padelis Theodosiou | Software Developer"
+      },
+      {
+        property: "og:site_name",
+        content: "Padelis Theodosiou | Software Developer"
+      },
+      { property: "og:type", content: "website" },
+      {
+        property: "og:url",
+        content: window.location.href
+      },
+      { property: "og:description", content: metas.resume.description },
+
+      // Twitter card
+      { name: "twitter:card", content: "summary" },
+      {
+        name: "twitter:site",
+        content: window.location.href
+      },
+      {
+        name: "twitter:title",
+        content: "Resume ← Padelis Theodosiou | Software Developer"
+      },
+      {
+        name: "twitter:description",
+        content: metas.resume.description
+      },
+      {
+        itemprop: "name",
+        content: "Resume ← Padelis Theodosiou | Software Developer"
+      },
+      { itemprop: "description", content: metas.resume.description }
+    ]
   }
 };
 </script>

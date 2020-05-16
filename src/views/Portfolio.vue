@@ -50,7 +50,7 @@ export default {
   }),
   async mounted() {
     this.repos = await this.getRepos();
-    this.filteredRepos = [...this.repos];
+    this.filterBy(this.activeFilter);
   },
   methods: {
     filterBy(id) {
