@@ -13,8 +13,27 @@
     </section>
     <b-container tag="section">
       <b-row v-if="!isLoading">
-        <b-col sm="12" md="6" lg="4" xl="4" v-for="(r, i) in filteredRepos" :key="i">
-          <portfolio-preview :repo="r"></portfolio-preview>
+        <b-col cols="12">
+          <b-list-group flush>
+            <b-list-group-item v-for="(r, i) in filteredRepos" :key="i">
+              <a
+                :href="r.html_url"
+                target="_blank"
+                ref="noopener"
+              >{{r.name | replace("-", " ") | capitalize(true)}}</a>
+              <div>
+                <span>
+                  <i class="fas fa-code-branch mr-1"></i>
+                  {{r.forks}}
+                </span>
+
+                <span>
+                  <i class="fas fa-star mr-1"></i>
+                  {{r.stargazers_count}}
+                </span>
+              </div>
+            </b-list-group-item>
+          </b-list-group>
         </b-col>
       </b-row>
       <b-row v-else>
@@ -33,10 +52,6 @@
 export default {
   name: "portfolio",
   components: {
-    PortfolioPreview: () =>
-      import(
-        /* webpackChunkName: "portfolio-preview" */ "@/components/portfolio/PortfolioPreview.vue"
-      ),
     Loader: () =>
       import(/* webpackChunkName: "loader" */ "@/components/shared/Loader.vue"),
     AppFooter: () =>
