@@ -10,10 +10,7 @@
       <personal-details></personal-details>
     </section>
     <section>
-      <personal-skills
-        :skills="technical"
-        title="Techical skills"
-      ></personal-skills>
+      <personal-skills :skills="technical" title="Techical skills"></personal-skills>
     </section>
     <section>
       <personal-skills :skills="soft" title="Soft skills"></personal-skills>

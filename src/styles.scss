@@ -148,6 +148,72 @@ body {
   }
 }
 
+// Blog
+.blog {
+  background: $white;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+
+  section {
+    padding: 30px;
+    &.row {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    &:not(:last-of-type) {
+      border-bottom: dashed thin $gray-500;
+    }
+
+    h2.section-title {
+      font-size: 18px;
+      margin-bottom: 0px;
+    }
+
+    .list-group {
+      .list-group-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 0em;
+        padding-right: 0em;
+        color: $gray-600;
+        &:hover {
+          color: $primary;
+        }
+
+        a {
+          color: inherit;
+          &:hover {
+            color: inherit;
+            text-decoration: none;
+          }
+        }
+
+        .badge {
+          margin: 0 0.5em;
+          padding: 0.7em 1em;
+          &:first-of-type {
+            margin-left: 0;
+          }
+          &:last-of-type {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+
+    ul.post-filters {
+      li.navbar-text {
+        padding: 0.5em 1em;
+        &:hover {
+          cursor: pointer;
+          color: $primary;
+        }
+      }
+    }
+  }
+}
+
 // Contact Page
 .contact {
   background: $white;

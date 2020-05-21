@@ -23,6 +23,9 @@
         </b-col>
       </b-row>
     </b-container>
+    <section>
+      <app-footer></app-footer>
+    </section>
   </div>
 </template>
 
@@ -35,7 +38,11 @@ export default {
         /* webpackChunkName: "portfolio-preview" */ "@/components/portfolio/PortfolioPreview.vue"
       ),
     Loader: () =>
-      import(/* webpackChunkName: "loader" */ "@/components/shared/Loader.vue")
+      import(/* webpackChunkName: "loader" */ "@/components/shared/Loader.vue"),
+    AppFooter: () =>
+      import(
+        /* webpackChunkName: "app-footer" */ "@/components/shared/Footer.vue"
+      )
   },
   data: () => ({
     filters: [
@@ -80,7 +87,14 @@ export default {
     async getRepos() {
       try {
         this.isLoading = true;
-        const { data } = await this.$http.get("/user/repos");
+        const { data } = await this.$http.get(
+          `${process.env.VUE_APP_BASE_URL}/user/repos`,
+          {
+            headers: {
+              Authorization: `token ${process.env.VUE_APP_GITHUB_API}`
+            }
+          }
+        );
         this.isLoading = false;
         return new Promise(resolve => {
           resolve(data);
