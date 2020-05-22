@@ -49,6 +49,7 @@
 </template>
 
 <script>
+import { metas } from "../utils/metas.js";
 export default {
   name: "portfolio",
   components: {
@@ -120,6 +121,48 @@ export default {
         });
       }
     }
+  },
+  metaInfo: {
+    // Children can override the title.
+    title: metas.portoflio.title,
+    // Define meta tags here.
+    meta: [
+      { name: "description", content: metas.portoflio.description },
+      {
+        property: "og:title",
+        content: "Portfolio ← Padelis Theodosiou | Software Developer"
+      },
+      {
+        property: "og:site_name",
+        content: "Padelis Theodosiou | Software Developer"
+      },
+      { property: "og:type", content: "website" },
+      {
+        property: "og:url",
+        content: window.location.href
+      },
+      { property: "og:description", content: metas.portoflio.description },
+
+      // Twitter card
+      { name: "twitter:card", content: "summary" },
+      {
+        name: "twitter:site",
+        content: window.location.href
+      },
+      {
+        name: "twitter:title",
+        content: "Portfolio ← Padelis Theodosiou | Software Developer"
+      },
+      {
+        name: "twitter:description",
+        content: metas.portoflio.description
+      },
+      {
+        itemprop: "name",
+        content: "Portfolio ← Padelis Theodosiou | Software Developer"
+      },
+      { itemprop: "description", content: metas.portoflio.description }
+    ]
   }
 };
 </script>

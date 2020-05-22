@@ -107,10 +107,10 @@ export default {
   metaInfo: {
     title: "Blog",
     meta: [
-      { name: "description", content: metas.about.description },
+      { name: "description", content: metas.blog.description },
       {
         property: "og:title",
-        content: "About me ← Padelis Theodosiou | Software Developer"
+        content: "Blog ← Padelis Theodosiou | Software Developer"
       },
       {
         property: "og:site_name",
@@ -121,7 +121,7 @@ export default {
         property: "og:url",
         content: window.location.href
       },
-      { property: "og:description", content: metas.about.description },
+      { property: "og:description", content: metas.blog.description },
 
       // Twitter card
       { name: "twitter:card", content: "summary" },
@@ -131,17 +131,17 @@ export default {
       },
       {
         name: "twitter:title",
-        content: "About me ← Padelis Theodosiou | Software Developer"
+        content: "Blog ← Padelis Theodosiou | Software Developer"
       },
       {
         name: "twitter:description",
-        content: metas.about.description
+        content: metas.blog.description
       },
       {
         itemprop: "name",
-        content: "About me ← Padelis Theodosiou | Software Developer"
+        content: "Blog ← Padelis Theodosiou | Software Developer"
       },
-      { itemprop: "description", content: metas.about.description }
+      { itemprop: "description", content: metas.blog.description }
     ]
   }
 };
