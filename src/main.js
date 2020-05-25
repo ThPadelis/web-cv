@@ -3,7 +3,6 @@ import App from "./App.vue";
 import router from "./router";
 import "./styles.scss";
 import "./utils/vueFilters";
-import "leaflet/dist/leaflet.css";
 import { BootstrapVue } from "bootstrap-vue";
 import { HTTP } from "./utils/axios";
 import Meta from "vue-meta";
