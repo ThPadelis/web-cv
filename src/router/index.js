@@ -37,6 +37,11 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "contact" */ "@/views/Contact.vue"),
   },
+  {
+    path: "*",
+    component: () =>
+      import(/* webpackChunkName: "page-not-found" */ "@/views/404.vue"),
+  },
 ];
 
 const router = new VueRouter({
