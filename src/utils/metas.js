@@ -22,4 +22,9 @@ export const metas = {
     description:
       "I am passionate about building excellent software that improves the lives of those around me. I specialize in creating software for everyone.",
   },
+  pageNotFound: {
+    title: "Page Not Found",
+    description:
+      "This may not mean anything. I'm probably working on something that has blown up. Or just the page is not found",
+  },
 };
