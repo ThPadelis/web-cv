@@ -15,6 +15,8 @@
     <transition name="fade" mode="out-in">
       <to-top v-if="showBtn" key="1"></to-top>
     </transition>
+
+    <json-ld></json-ld>
   </div>
 </template>
 
@@ -52,7 +54,9 @@ export default {
     ToTop: () =>
       import(
         /* webpackChunkName: "to-top" */ "@/components/shared/TopArrow.vue"
-      )
+      ),
+    "json-ld": () =>
+      import(/* webpackChunkName: "json-ld" */ "@/components/shared/JsonLD.vue")
   },
   metaInfo: {
     titleTemplate: "%s ← Padelis Theodosiou | Software Developer"

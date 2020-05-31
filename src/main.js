@@ -7,6 +7,16 @@ import { BootstrapVue } from "bootstrap-vue";
 import { HTTP } from "./utils/axios";
 import Meta from "vue-meta";
 
+import VueGtag from "vue-gtag";
+
+Vue.use(
+  VueGtag,
+  {
+    config: { id: "UA-168088174-1" },
+  },
+  router
+);
+
 Vue.use(BootstrapVue);
 Vue.config.productionTip = false;
 Vue.prototype.$http = HTTP;
