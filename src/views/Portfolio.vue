@@ -124,44 +124,32 @@ export default {
   },
   metaInfo: {
     // Children can override the title.
-    title: metas.portoflio.title,
+    title: metas.titles.portfolio,
     // Define meta tags here.
     meta: [
-      { name: "description", content: metas.portoflio.description },
-      {
-        property: "og:title",
-        content: "Portfolio ← Padelis Theodosiou | Software Developer"
-      },
-      {
-        property: "og:site_name",
-        content: "Padelis Theodosiou | Software Developer"
-      },
-      { property: "og:type", content: "website" },
-      {
-        property: "og:url",
-        content: window.location.href
-      },
-      { property: "og:description", content: metas.portoflio.description },
-
-      // Twitter card
-      { name: "twitter:card", content: "summary" },
-      {
-        name: "twitter:site",
-        content: window.location.href
-      },
+      // Primary Meta Tags
+      { name: "description", content: metas.description },
+      { name: "robots", content: "index, follow" },
+      { name: "author", content: "Padelis Theodosiou" },
+      // Twitter Card
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:site", content: "@ThPadelis" },
       {
         name: "twitter:title",
-        content: "Portfolio ← Padelis Theodosiou | Software Developer"
+        content: "Portfolio ← Padelis Theodosiou | Software Engineer"
       },
+      { name: "twitter:description", content: metas.description },
+      { name: "twitter:image", content: `${window.location.origin}/me.jpg` },
+      // Open Graph / Facebook
+      { name: "og:type", content: "profile" },
       {
-        name: "twitter:description",
-        content: metas.portoflio.description
+        name: "og:title",
+        content: "Portfolio ← Padelis Theodosiou | Software Engineer"
       },
-      {
-        itemprop: "name",
-        content: "Portfolio ← Padelis Theodosiou | Software Developer"
-      },
-      { itemprop: "description", content: metas.portoflio.description }
+      { name: "og:url", content: window.location.href },
+      { name: "og:image", content: `${window.location.origin}/me.jpg` },
+      { name: "profile:first_name", content: "Padelis" },
+      { name: "profile:last_name", content: "Theodosiou" }
     ]
   }
 };
