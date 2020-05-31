@@ -9,6 +9,8 @@ module.exports = {
     plugins: [new BundleAnalyzerPlugin(), new MomentLocalesPlugin()],
     optimization: {
       splitChunks: {
+        name: "manifest",
+        minChunks: Infinity,
         cacheGroups: {
           commons: {
             name: "commons",
