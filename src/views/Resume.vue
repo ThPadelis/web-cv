@@ -1,7 +1,8 @@
 <template>
   <div class="resume">
-    <section>
+    <section class="d-flex justify-content-between align-items-center">
       <h2 class="section-title">My Resume</h2>
+      <a class="card-link" href="/padelis-theodosiou-cv.pdf" download>Get my CV</a>
     </section>
     <section>
       <timeline icon="fas fa-graduation-cap" :timeline="education"></timeline>
@@ -94,3 +95,20 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+section:first-of-type {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  a.card-link {
+    color: $dark;
+    border-bottom: solid 2px transparent;
+    &:hover {
+      color: $primary;
+      border-bottom-color: $primary;
+    }
+  }
+}
+</style>
