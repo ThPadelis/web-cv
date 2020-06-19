@@ -24,10 +24,16 @@ export default {
   data: () => ({
     experience: [
       {
-        title: "Software Developer - Blockachain",
+        title: "Software Developer - Athens Technology Center",
         period: [moment("2019-09-09"), moment()],
         description:
-          "Involved in the development process of various web applications for European projects. "
+          "Involved in the development process of various web applications for European projects. Used innovating technologies and Agile software development methodology."
+      },
+      {
+        title: "Software Developer - Blockachain",
+        period: [moment("2019-09-09"), moment("2019-12-15")],
+        description:
+          "Involved in the development process of various web applications for European projects. Used innovating technologies and Agile software development methodology."
       },
       {
         title: "Software Developer Intern - The Smalls",
