@@ -7,7 +7,7 @@
 
     <p
       class="personal-text"
-    >During the day, I am working as Software Developer at Blockachain which is where my passion for development converge. During the evenings, I spend my time reading about innovating web technologies and building my own products or trying out a new cooking recipe.</p>
+    >During the day, I am working as Software Developer at Athens Technology Center which is where my passion for development converge. During the evenings, I spend my time reading about innovating web technologies and building my own products or trying out a new cooking recipe.</p>
   </div>
 </template>
 
