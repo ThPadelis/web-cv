@@ -27,7 +27,7 @@ export default {
         title: "Software Developer - Athens Technology Center",
         period: [moment("2019-09-09"), moment()],
         description:
-          "Involved in the development process of various web applications for European projects. Used innovating technologies and Agile software development methodology."
+          "Collaborated on all stages of systems development lifecycle, from requirement gathering to production releases.\nDelivered and maintained scalable system architecture to support high-availability Internet site with various internal applications.\nMaintained and upgraded products to deliver smooth-running systems.\nCollaborated with other developers to identify and alleviate number of bugs and errors in software.\nEvaluated project requirements and specifications and developed software applications that surpassed client expectations.\nInvolved in the development process of various web applications for European projects.\nUsed innovating technologies and Agile software development methodology."
       },
       {
         title: "Software Developer - Blockachain",
