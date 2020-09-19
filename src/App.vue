@@ -4,6 +4,7 @@
       <b-row>
         <b-col sm="12" md="4" lg="3" xl="3">
           <user-card></user-card>
+          <featured></featured>
         </b-col>
         <b-col sm="12" md="8" lg="9" xl="9">
           <navbar></navbar>
@@ -24,7 +25,7 @@
 export default {
   name: "app",
   data: () => ({
-    showBtn: false
+    showBtn: false,
   }),
   created() {
     window.addEventListener("scroll", this.handleScroll);
@@ -41,7 +42,7 @@ export default {
 
       if (perc > 10) this.showBtn = true;
       else this.showBtn = false;
-    }
+    },
   },
   components: {
     Navbar: () =>
@@ -56,11 +57,17 @@ export default {
         /* webpackChunkName: "to-top" */ "@/components/shared/TopArrow.vue"
       ),
     "json-ld": () =>
-      import(/* webpackChunkName: "json-ld" */ "@/components/shared/JsonLD.vue")
+      import(
+        /* webpackChunkName: "json-ld" */ "@/components/shared/JsonLD.vue"
+      ),
+    Featured: () =>
+      import(
+        /* webpackChunkName: "featured" */ "@/components/shared/Featured.vue"
+      ),
   },
   metaInfo: {
-    titleTemplate: "%s ← Padelis Theodosiou | Software Developer"
-  }
+    titleTemplate: "%s ← Padelis Theodosiou | Software Developer",
+  },
 };
 </script>
 

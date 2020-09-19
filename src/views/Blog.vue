@@ -21,7 +21,7 @@
     </section>
     <b-container tag="section">
       <b-row v-if="!isLoading">
-        <b-col cols="12">
+        <!-- <b-col cols="12">
           <b-list-group flush>
             <b-list-group-item v-for="(p,i) of posts" :key="i">
               <a :href="p.canonical_url" target="_blank" ref="noopener">{{p.title}}</a>
@@ -31,6 +31,9 @@
               </span>
             </b-list-group-item>
           </b-list-group>
+        </b-col>-->
+        <b-col cols="12">
+          <post v-for="(p, i) in posts" :key="i" :post="p"></post>
         </b-col>
       </b-row>
       <b-row v-else>
@@ -55,13 +58,15 @@ export default {
     AppFooter: () =>
       import(
         /* webpackChunkName: "app-footer" */ "@/components/shared/Footer.vue"
-      )
+      ),
+    Post: () =>
+      import(/* webpackChunkName: "post" */ "@/components/blog/Post.vue"),
   },
   data: () => ({
     isLoading: true,
     isAsc: true,
     sortedBy: "created_at",
-    posts: []
+    posts: [],
   }),
   async mounted() {
     this.posts = await this.getPosts();
@@ -74,7 +79,7 @@ export default {
           `${process.env.VUE_APP_DEV_BASE_URL}/articles?username=thpadelis`
         );
         this.isLoading = false;
-        return new Promise(resolve => {
+        return new Promise((resolve) => {
           resolve(data);
         });
       } catch (error) {
@@ -102,7 +107,7 @@ export default {
       } else {
         return "fa fa-sort";
       }
-    }
+    },
   },
   metaInfo: {
     // Children can override the title.
@@ -118,7 +123,7 @@ export default {
       { name: "twitter:site", content: "@ThPadelis" },
       {
         name: "twitter:title",
-        content: "Blog ← Padelis Theodosiou | Software Engineer"
+        content: "Blog ← Padelis Theodosiou | Software Engineer",
       },
       { name: "twitter:description", content: metas.description },
       { name: "twitter:image", content: `${window.location.origin}/me.jpg` },
@@ -126,14 +131,14 @@ export default {
       { name: "og:type", content: "profile" },
       {
         name: "og:title",
-        content: "Blog ← Padelis Theodosiou | Software Engineer"
+        content: "Blog ← Padelis Theodosiou | Software Engineer",
       },
       { name: "og:url", content: window.location.href },
       { name: "og:image", content: `${window.location.origin}/me.jpg` },
       { name: "profile:first_name", content: "Padelis" },
-      { name: "profile:last_name", content: "Theodosiou" }
-    ]
-  }
+      { name: "profile:last_name", content: "Theodosiou" },
+    ],
+  },
 };
 </script>
 

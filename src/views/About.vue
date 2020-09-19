@@ -41,24 +41,24 @@ export default {
     AppFooter: () =>
       import(
         /* webpackChunkName: "app-footer" */ "@/components/shared/Footer.vue"
-      )
+      ),
   },
   data: () => ({
     technical: [
       { title: "VueJS", value: 80, max: 100 },
       { title: "Angular 2+", value: 70, max: 100 },
       { title: "HTML/(S)CSS", value: 95, max: 100 },
-      { title: "NodeJS", value: 65, max: 100 },
-      { title: "JavaScript", value: 80, max: 100 },
-      { title: "MongoDB", value: 55, max: 100 }
+      { title: "NodeJS", value: 75, max: 100 },
+      { title: "JavaScript", value: 85, max: 100 },
+      { title: "MongoDB", value: 55, max: 100 },
     ],
     soft: [
       { title: "Communication", value: 85, max: 100 },
       { title: "Teamwork", value: 95, max: 100 },
       { title: "Problem solving", value: 85, max: 100 },
       { title: "Accountability", value: 90, max: 100 },
-      { title: "Creativity", value: 70, max: 100 }
-    ]
+      { title: "Creativity", value: 70, max: 100 },
+    ],
   }),
   metaInfo: {
     // Children can override the title.
@@ -74,7 +74,7 @@ export default {
       { name: "twitter:site", content: "@ThPadelis" },
       {
         name: "twitter:title",
-        content: "About ← Padelis Theodosiou | Software Engineer"
+        content: "About ← Padelis Theodosiou | Software Engineer",
       },
       { name: "twitter:description", content: metas.description },
       { name: "twitter:image", content: `${window.location.origin}/me.jpg` },
@@ -82,13 +82,13 @@ export default {
       { name: "og:type", content: "profile" },
       {
         name: "og:title",
-        content: "About ← Padelis Theodosiou | Software Engineer"
+        content: "About ← Padelis Theodosiou | Software Engineer",
       },
       { name: "og:url", content: window.location.href },
       { name: "og:image", content: `${window.location.origin}/me.jpg` },
       { name: "profile:first_name", content: "Padelis" },
-      { name: "profile:last_name", content: "Theodosiou" }
-    ]
-  }
+      { name: "profile:last_name", content: "Theodosiou" },
+    ],
+  },
 };
 </script>
