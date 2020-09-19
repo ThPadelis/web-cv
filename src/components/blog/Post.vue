@@ -1,11 +1,7 @@
 <template>
   <div class="post">
     <div class="post__image">
-      <img
-        :src="post.cover_image ? post.cover_image : require('@/assets/roman-kraft-_Zua2hyvTBk-unsplash.jpg')"
-        alt="Post image"
-        class="img-fluid"
-      />
+      <img :src="post.social_image" :alt="post.title" class="img-fluid" />
     </div>
 
     <div class="post__content">
