@@ -9,9 +9,13 @@
   >
     <b-card-body>
       <b-card-title class="text-center">
-        <a href="http://padelis.theodosiou.me/covid-19" target="_blank">Covid Tracker</a>
+        <a href="http://padelis.theodosiou.me/covid-19" target="_blank"
+          >Covid Tracker</a
+        >
       </b-card-title>
-      <b-card-sub-title class="text-center text-muted">Featured Application</b-card-sub-title>
+      <b-card-sub-title class="text-center text-muted"
+        >Featured Application</b-card-sub-title
+      >
     </b-card-body>
   </b-card>
 </template>

@@ -5,17 +5,28 @@
       <b-nav class="post-filters">
         <b-nav-text
           @click="sortBy('created_at')"
-          :class="sortedBy === 'created_at' ? 'text-primary border-bottom border-primary' : 'text-muted border-bottom-0'"
+          :class="
+            sortedBy === 'created_at'
+              ? 'text-primary border-bottom border-primary'
+              : 'text-muted border-bottom-0'
+          "
         >
           Date
           <span class="fa" :class="isSortedBy('created_at')"></span>
         </b-nav-text>
         <b-nav-text
           @click="sortBy('positive_reactions_count')"
-          :class="sortedBy === 'positive_reactions_count' ? 'text-primary border-bottom border-primary' : 'text-muted border-bottom-0'"
+          :class="
+            sortedBy === 'positive_reactions_count'
+              ? 'text-primary border-bottom border-primary'
+              : 'text-muted border-bottom-0'
+          "
         >
-          Likes
-          <span class="fa" :class="isSortedBy('positive_reactions_count')"></span>
+          Reactions
+          <span
+            class="fa"
+            :class="isSortedBy('positive_reactions_count')"
+          ></span>
         </b-nav-text>
       </b-nav>
     </section>
@@ -126,7 +137,7 @@ export default {
         content: "Blog ← Padelis Theodosiou | Software Engineer",
       },
       { name: "twitter:description", content: metas.description },
-      { name: "twitter:image", content: `${window.location.origin}/me.jpg` },
+      { name: "twitter:image", content: `${window.location.origin}/me.png` },
       // Open Graph / Facebook
       { name: "og:type", content: "profile" },
       {
@@ -134,7 +145,7 @@ export default {
         content: "Blog ← Padelis Theodosiou | Software Engineer",
       },
       { name: "og:url", content: window.location.href },
-      { name: "og:image", content: `${window.location.origin}/me.jpg` },
+      { name: "og:image", content: `${window.location.origin}/me.png` },
       { name: "profile:first_name", content: "Padelis" },
       { name: "profile:last_name", content: "Theodosiou" },
     ],

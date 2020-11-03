@@ -10,7 +10,10 @@
       <personal-details></personal-details>
     </section>
     <section>
-      <personal-skills :skills="technical" title="Techical skills"></personal-skills>
+      <personal-skills
+        :skills="technical"
+        title="Techical skills"
+      ></personal-skills>
     </section>
     <section>
       <personal-skills :skills="soft" title="Soft skills"></personal-skills>
@@ -46,11 +49,11 @@ export default {
   data: () => ({
     technical: [
       { title: "VueJS", value: 80, max: 100 },
-      { title: "Angular 2+", value: 70, max: 100 },
+      { title: "Angular 2+", value: 80, max: 100 },
       { title: "HTML/(S)CSS", value: 95, max: 100 },
       { title: "NodeJS", value: 75, max: 100 },
       { title: "JavaScript", value: 85, max: 100 },
-      { title: "MongoDB", value: 55, max: 100 },
+      { title: "MongoDB", value: 60, max: 100 },
     ],
     soft: [
       { title: "Communication", value: 85, max: 100 },
@@ -77,7 +80,7 @@ export default {
         content: "About ← Padelis Theodosiou | Software Engineer",
       },
       { name: "twitter:description", content: metas.description },
-      { name: "twitter:image", content: `${window.location.origin}/me.jpg` },
+      { name: "twitter:image", content: `${window.location.origin}/me.png` },
       // Open Graph / Facebook
       { name: "og:type", content: "profile" },
       {
@@ -85,7 +88,7 @@ export default {
         content: "About ← Padelis Theodosiou | Software Engineer",
       },
       { name: "og:url", content: window.location.href },
-      { name: "og:image", content: `${window.location.origin}/me.jpg` },
+      { name: "og:image", content: `${window.location.origin}/me.png` },
       { name: "profile:first_name", content: "Padelis" },
       { name: "profile:last_name", content: "Theodosiou" },
     ],

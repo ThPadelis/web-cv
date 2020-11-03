@@ -7,8 +7,13 @@
           v-for="(f, i) in filters"
           :key="i"
           @click="filterBy(f.id)"
-          :class="activeFilter === f.id ? 'text-primary border-bottom border-primary' : 'text-muted border-bottom-0'"
-        >{{ f.text }}</b-nav-text>
+          :class="
+            activeFilter === f.id
+              ? 'text-primary border-bottom border-primary'
+              : 'text-muted border-bottom-0'
+          "
+          >{{ f.text }}</b-nav-text
+        >
       </b-nav>
     </section>
     <b-container tag="section">
@@ -16,20 +21,18 @@
         <b-col cols="12">
           <b-list-group flush>
             <b-list-group-item v-for="(r, i) in filteredRepos" :key="i">
-              <a
-                :href="r.html_url"
-                target="_blank"
-                ref="noopener"
-              >{{r.name | replace("-", " ") | capitalize(true)}}</a>
+              <a :href="r.html_url" target="_blank" ref="noopener">{{
+                r.name | replace("-", " ") | capitalize(true)
+              }}</a>
               <div>
                 <span>
                   <i class="fas fa-code-branch mr-1"></i>
-                  {{r.forks}}
+                  {{ r.forks }}
                 </span>
 
                 <span>
                   <i class="fas fa-star mr-1"></i>
-                  {{r.stargazers_count}}
+                  {{ r.stargazers_count }}
                 </span>
               </div>
             </b-list-group-item>
@@ -58,18 +61,18 @@ export default {
     AppFooter: () =>
       import(
         /* webpackChunkName: "app-footer" */ "@/components/shared/Footer.vue"
-      )
+      ),
   },
   data: () => ({
     filters: [
       { id: 1, text: "All" },
       { id: 2, text: "Mine" },
-      { id: 3, text: "Collaborator" }
+      { id: 3, text: "Collaborator" },
     ],
     activeFilter: 2,
     repos: null,
     filteredRepos: [],
-    isLoading: true
+    isLoading: true,
   }),
   async mounted() {
     this.repos = await this.getRepos();
@@ -85,13 +88,13 @@ export default {
         case 2:
           this.activeFilter = id;
           this.filteredRepos = [...this.repos].filter(
-            repo => repo.owner.login === process.env.VUE_APP_GITHUB_USER
+            (repo) => repo.owner.login === process.env.VUE_APP_GITHUB_USER
           );
           break;
         case 3:
           this.activeFilter = id;
           this.filteredRepos = [...this.repos].filter(
-            repo => repo.owner.login !== process.env.VUE_APP_GITHUB_USER
+            (repo) => repo.owner.login !== process.env.VUE_APP_GITHUB_USER
           );
           break;
         default:
@@ -107,12 +110,12 @@ export default {
           `${process.env.VUE_APP_BASE_URL}/user/repos`,
           {
             headers: {
-              Authorization: `token ${process.env.VUE_APP_GITHUB_API}`
-            }
+              Authorization: `token ${process.env.VUE_APP_GITHUB_API}`,
+            },
           }
         );
         this.isLoading = false;
-        return new Promise(resolve => {
+        return new Promise((resolve) => {
           resolve(data);
         });
       } catch (error) {
@@ -120,7 +123,7 @@ export default {
           reject(error);
         });
       }
-    }
+    },
   },
   metaInfo: {
     // Children can override the title.
@@ -136,22 +139,22 @@ export default {
       { name: "twitter:site", content: "@ThPadelis" },
       {
         name: "twitter:title",
-        content: "Portfolio ← Padelis Theodosiou | Software Engineer"
+        content: "Portfolio ← Padelis Theodosiou | Software Engineer",
       },
       { name: "twitter:description", content: metas.description },
-      { name: "twitter:image", content: `${window.location.origin}/me.jpg` },
+      { name: "twitter:image", content: `${window.location.origin}/me.png` },
       // Open Graph / Facebook
       { name: "og:type", content: "profile" },
       {
         name: "og:title",
-        content: "Portfolio ← Padelis Theodosiou | Software Engineer"
+        content: "Portfolio ← Padelis Theodosiou | Software Engineer",
       },
       { name: "og:url", content: window.location.href },
-      { name: "og:image", content: `${window.location.origin}/me.jpg` },
+      { name: "og:image", content: `${window.location.origin}/me.png` },
       { name: "profile:first_name", content: "Padelis" },
-      { name: "profile:last_name", content: "Theodosiou" }
-    ]
-  }
+      { name: "profile:last_name", content: "Theodosiou" },
+    ],
+  },
 };
 </script>
 

@@ -42,7 +42,7 @@ export default {
     AppFooter: () =>
       import(
         /* webpackChunkName: "app-footer" */ "@/components/shared/Footer.vue"
-      )
+      ),
   },
   metaInfo: {
     // Children can override the title.
@@ -58,21 +58,21 @@ export default {
       { name: "twitter:site", content: "@ThPadelis" },
       {
         name: "twitter:title",
-        content: "Contact ← Padelis Theodosiou | Software Engineer"
+        content: "Contact ← Padelis Theodosiou | Software Engineer",
       },
       { name: "twitter:description", content: metas.description },
-      { name: "twitter:image", content: `${window.location.origin}/me.jpg` },
+      { name: "twitter:image", content: `${window.location.origin}/me.png` },
       // Open Graph / Facebook
       { name: "og:type", content: "profile" },
       {
         name: "og:title",
-        content: "Contact ← Padelis Theodosiou | Software Engineer"
+        content: "Contact ← Padelis Theodosiou | Software Engineer",
       },
       { name: "og:url", content: window.location.href },
-      { name: "og:image", content: `${window.location.origin}/me.jpg` },
+      { name: "og:image", content: `${window.location.origin}/me.png` },
       { name: "profile:first_name", content: "Padelis" },
-      { name: "profile:last_name", content: "Theodosiou" }
-    ]
-  }
+      { name: "profile:last_name", content: "Theodosiou" },
+    ],
+  },
 };
 </script>
