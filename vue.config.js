@@ -6,7 +6,10 @@ const MomentLocalesPlugin = require("moment-locales-webpack-plugin");
 
 module.exports = {
   configureWebpack: {
-    plugins: [new BundleAnalyzerPlugin(), new MomentLocalesPlugin()],
+    plugins: [
+      new BundleAnalyzerPlugin({ analyzerPort: "auto" }),
+      new MomentLocalesPlugin(),
+    ],
     optimization: {
       splitChunks: {
         name: "manifest",

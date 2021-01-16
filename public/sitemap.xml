@@ -20,8 +20,18 @@
     <loc>http://padelis.theodosiou.me/contact</loc>
     <priority>0.5</priority>
   </url>
+  <!-- Applications START -->
   <url>
-    <loc>http://padelis.theodosiou.me/covid-19</loc>
-    <priority>0.8</priority>
+    <loc>http://padelis.theodosiou.me/apps</loc>
+    <priority>0.1</priority>
   </url>
+  <url>
+    <loc>http://padelis.theodosiou.me/apps/covid</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://padelis.theodosiou.me/apps/weather</loc>
+    <priority>0.5</priority>
+  </url>
+  <!-- Applications END -->
 </urlset>
