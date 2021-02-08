@@ -4,6 +4,7 @@ export const metas = {
     blog: "Blog",
     contact: "Contact",
     portfolio: "Portfolio",
+    applications: "Applications",
     resume: "Resume",
   },
   description:

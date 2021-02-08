@@ -1,13 +1,23 @@
 <template>
   <div>
-    <b-navbar class="d-none d-lg-block" toggleable="lg" type="light" variant="white">
+    <b-navbar
+      class="d-none d-lg-block"
+      toggleable="lg"
+      type="light"
+      variant="white"
+    >
       <div></div>
       <b-navbar-toggle target="nav-collapse" class="border-0"></b-navbar-toggle>
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav fill justified class="w-100">
-          <b-nav-item v-for="(n, i) in navItems" :key="i" :to="n.to" active-class="active-item">
-            <span :class="n.icon" class="mr-1"></span>
+          <b-nav-item
+            v-for="(n, i) in navItems"
+            :key="i"
+            :to="n.to"
+            active-class="active-item"
+          >
+            <span :class="n.icon" class="mr-1 d-block"></span>
             <span>{{ n.text }}</span>
           </b-nav-item>
         </b-navbar-nav>
@@ -15,7 +25,7 @@
     </b-navbar>
 
     <b-nav fill justified class="alt-nav d-lg-none">
-      <b-nav-item v-for="(n,i) in navItems" :key="i" :to="n.to">
+      <b-nav-item v-for="(n, i) in navItems" :key="i" :to="n.to">
         <span :class="n.icon"></span>
       </b-nav-item>
     </b-nav>
@@ -30,10 +40,11 @@ export default {
       { to: "/about", text: "About", icon: "far fa-user" },
       { to: "/resume", text: "Resume", icon: "far fa-file-alt" },
       { to: "/portfolio", text: "Portfolio", icon: "far fa-image" },
+      { to: "/applications", text: "Applications", icon: "fa fa-cubes" },
       { to: "/blog", text: "Blog", icon: "far fa-comments" },
-      { to: "/contact", text: "Contact", icon: "fa fa-map-marker-alt" }
-    ]
-  })
+      { to: "/contact", text: "Contact", icon: "fa fa-map-marker-alt" },
+    ],
+  }),
 };
 </script>
 

@@ -22,8 +22,8 @@
   </url>
   <!-- Applications START -->
   <url>
-    <loc>http://padelis.theodosiou.me/apps</loc>
-    <priority>0.1</priority>
+    <loc>http://padelis.theodosiou.me/applications</loc>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>http://padelis.theodosiou.me/apps/covid</loc>

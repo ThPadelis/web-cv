@@ -9,7 +9,7 @@
   >
     <b-card-body>
       <b-card-title class="text-center">
-        <a href="http://padelis.theodosiou.me/covid-19" target="_blank"
+        <a href="http://padelis.theodosiou.me/apps/covid" target="_blank"
           >Covid Tracker</a
         >
       </b-card-title>
