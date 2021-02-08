@@ -39,8 +39,7 @@ export default {
     navItems: [
       { to: "/about", text: "About", icon: "far fa-user" },
       { to: "/resume", text: "Resume", icon: "far fa-file-alt" },
-      { to: "/portfolio", text: "Portfolio", icon: "far fa-image" },
-      { to: "/applications", text: "Applications", icon: "fa fa-cubes" },
+      { to: "/portfolio", text: "Portfolio", icon: "fa fa-cubes" },
       { to: "/blog", text: "Blog", icon: "far fa-comments" },
       { to: "/contact", text: "Contact", icon: "fa fa-map-marker-alt" },
     ],

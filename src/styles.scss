@@ -144,21 +144,23 @@ body {
         padding-left: 0em;
         padding-right: 0em;
         color: $gray-600;
+
         &:hover {
           color: $primary;
-        }
-
-        a {
-          color: inherit;
-          &:hover {
-            color: inherit;
+          a {
+            color: $gray-800;
+            font-weight: bold;
             text-decoration: none;
           }
         }
 
+        a {
+          color: inherit;
+        }
+
         .badge {
           margin: 0 0.5em;
-          padding: 0.7em 1em;
+          // padding: 0.7em 1em;
           &:first-of-type {
             margin-left: 0;
           }

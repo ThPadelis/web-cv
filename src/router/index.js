@@ -38,12 +38,6 @@ const routes = [
       import(/* webpackChunkName: "contact" */ "@/views/Contact.vue"),
   },
   {
-    path: "/applications",
-    name: "Applications",
-    component: () =>
-      import(/* webpackChunkName: "applications" */ "@/views/Applications.vue"),
-  },
-  {
     path: "*",
     component: () =>
       import(/* webpackChunkName: "page-not-found" */ "@/views/404.vue"),

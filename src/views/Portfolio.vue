@@ -25,15 +25,15 @@
                 r.name | replace("-", " ") | capitalize(true)
               }}</a>
               <div>
-                <span>
-                  <i class="fas fa-code-branch mr-1"></i>
-                  {{ r.forks }}
-                </span>
-
-                <span>
-                  <i class="fas fa-star mr-1"></i>
-                  {{ r.stargazers_count }}
-                </span>
+                <a
+                  v-if="r.homepage"
+                  :href="r.homepage"
+                  target="_blank"
+                  ref="noopener"
+                  class="badge"
+                >
+                  <span class="fas fa-link"></span
+                ></a>
               </div>
             </b-list-group-item>
           </b-list-group>
