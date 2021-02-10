@@ -1,7 +1,7 @@
 <template>
   <b-card
     no-body
-    :img-src="require('@/assets/me.png')"
+    :img-src="require('@/assets/IMG_4479.jpg')"
     img-alt="me-profile"
     img-top
     class="mb-3"
