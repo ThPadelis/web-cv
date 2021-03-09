@@ -21,9 +21,10 @@
         <b-col cols="12">
           <b-list-group flush>
             <b-list-group-item v-for="(r, i) in filteredRepos" :key="i">
-              <a :href="r.html_url" target="_blank" ref="noopener">{{
-                r.name | replace("-", " ") | capitalize(true)
-              }}</a>
+              <a :href="r.html_url" target="_blank" ref="noopener">
+                {{ r.name | replace("-", " ") | capitalize(true) }}
+                <small class="text-secondary" v-if="r.private">(private)</small>
+              </a>
               <div>
                 <a
                   v-if="r.homepage"

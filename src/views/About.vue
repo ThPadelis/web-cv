@@ -50,10 +50,13 @@ export default {
     technical: [
       { title: "VueJS", value: 80, max: 100 },
       { title: "Angular 2+", value: 80, max: 100 },
+      { title: "ReactJS", value: 40, max: 100 },
       { title: "HTML/(S)CSS", value: 95, max: 100 },
       { title: "NodeJS", value: 75, max: 100 },
-      { title: "JavaScript", value: 85, max: 100 },
-      { title: "MongoDB", value: 60, max: 100 },
+      { title: "JavaScript", value: 90, max: 100 },
+      { title: "MongoDB", value: 75, max: 100 },
+      { title: "Blockchain", value: 35, max: 100 },
+      { title: "Solidity", value: 65, max: 100 },
     ],
     soft: [
       { title: "Communication", value: 85, max: 100 },
