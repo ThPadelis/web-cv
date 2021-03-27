@@ -30,7 +30,11 @@
         ></b-form-textarea>
       </b-form-group>
 
-      <b-btn class="w-50 mb-3" variant="primary" type="submit"
+      <b-btn
+        class="w-50 mb-3"
+        variant="primary"
+        type="submit"
+        :disabled="!canSubmitted"
         >Send a message</b-btn
       >
     </b-form>
@@ -54,6 +58,15 @@ export default {
   mounted() {
     init(environment.emailjsInit);
   },
+  computed: {
+    canSubmitted() {
+      const { name, email, message } = this.contact;
+      const hasName = name.trim().length > 0;
+      const hasValidEmail = email.trim().length > 0 && this.isValidEmail(email);
+      const hasMessage = message.trim().length > 0;
+      return hasName && hasValidEmail && hasMessage;
+    },
+  },
   methods: {
     async onSubmit() {
       try {
@@ -70,6 +83,10 @@ export default {
         // console.log(error);
         Toast.fire({ icon: "error", title: error.toString() });
       }
+    },
+    isValidEmail(value) {
+      const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(String(value).toLowerCase());
     },
   },
 };
