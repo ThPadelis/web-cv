@@ -1,4 +1,5 @@
-const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
+  .BundleAnalyzerPlugin;
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const MomentLocalesPlugin = require("moment-locales-webpack-plugin");
 
@@ -6,7 +7,7 @@ module.exports = {
   configureWebpack: {
     plugins: [
       // new BundleAnalyzerPlugin({ analyzerPort: "auto" }),
-      new MomentLocalesPlugin()
+      new MomentLocalesPlugin(),
     ],
     optimization: {
       splitChunks: {
@@ -20,9 +21,7 @@ module.exports = {
           },
         },
       },
-      minimizer: [
-        new UglifyJsPlugin(),
-      ],
+      minimizer: [new UglifyJsPlugin()],
     },
   },
   css: {
@@ -30,6 +29,21 @@ module.exports = {
       scss: {
         prependData: `@import "~@/assets/_variables.scss";`,
       },
+    },
+  },
+  pwa: {
+    name: "My App",
+    themeColor: "#4DBA87",
+    msTileColor: "#000000",
+    appleMobileWebAppCapable: "yes",
+    appleMobileWebAppStatusBarStyle: "black",
+
+    // configure the workbox plugin
+    workboxPluginMode: "InjectManifest",
+    workboxOptions: {
+      // swSrc is required in InjectManifest mode.
+      swSrc: "dev/sw.js",
+      // ...other Workbox options...
     },
   },
 };
