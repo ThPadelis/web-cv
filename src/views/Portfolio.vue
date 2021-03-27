@@ -113,6 +113,7 @@ export default {
           {
             headers: {
               Authorization: `token ${environment.githubToken}`,
+              Accept: "application/vnd.github.v3+json",
             },
           }
         );
