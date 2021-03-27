@@ -60,6 +60,7 @@
 </template>
 
 <script>
+import environment from "../utils/environment";
 import { metas } from "../utils/metas";
 export default {
   name: "portfolio",
@@ -87,7 +88,7 @@ export default {
       try {
         this.isLoading = true;
         const { data } = await this.$http.get(
-          `${process.env.VUE_APP_DEV_BASE_URL}/articles?username=thpadelis`
+          `${environment.devtoBaseURL}/articles?username=thpadelis`
         );
         this.isLoading = false;
         return new Promise((resolve) => {

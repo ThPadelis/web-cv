@@ -53,6 +53,7 @@
 </template>
 
 <script>
+import environment from "../utils/environment.js";
 import { metas } from "../utils/metas.js";
 export default {
   name: "portfolio",
@@ -89,13 +90,13 @@ export default {
         case 2:
           this.activeFilter = id;
           this.filteredRepos = [...this.repos].filter(
-            (repo) => repo.owner.login === process.env.VUE_APP_GITHUB_USER
+            (repo) => repo.owner.login === environment.githubUser
           );
           break;
         case 3:
           this.activeFilter = id;
           this.filteredRepos = [...this.repos].filter(
-            (repo) => repo.owner.login !== process.env.VUE_APP_GITHUB_USER
+            (repo) => repo.owner.login !== environment.githubUser
           );
           break;
         default:
@@ -108,10 +109,10 @@ export default {
       try {
         this.isLoading = true;
         const { data } = await this.$http.get(
-          `${process.env.VUE_APP_BASE_URL}/user/repos`,
+          `${environment.githubBaseURL}/user/repos`,
           {
             headers: {
-              Authorization: `token ${process.env.VUE_APP_GITHUB_API}`,
+              Authorization: `token ${environment.githubToken}`,
             },
           }
         );

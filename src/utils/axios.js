@@ -1,3 +1,3 @@
 import axios from "axios";
 
-export const HTTP = axios.create({});
+export default axios.create({});
