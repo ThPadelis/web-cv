@@ -9,6 +9,7 @@ import VueGtag from "vue-gtag";
 
 import "./styles.scss";
 import "./utils/vueFilters";
+import store from './store'
 
 Vue.use(
   VueGtag,
@@ -25,5 +26,6 @@ Vue.config.productionTip = false;
 
 new Vue({
   router,
-  render: (h) => h(App),
+  store,
+  render: (h) => h(App)
 }).$mount("#app", true);

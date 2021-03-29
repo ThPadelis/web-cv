@@ -53,6 +53,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import environment from "../utils/environment.js";
 import { metas } from "../utils/metas.js";
 export default {
@@ -65,6 +66,11 @@ export default {
         /* webpackChunkName: "app-footer" */ "@/components/shared/Footer.vue"
       ),
   },
+  computed: {
+    ...mapGetters("repos", {
+      items: "items",
+    }),
+  },
   data: () => ({
     filters: [
       { id: 1, text: "All" },
@@ -74,10 +80,11 @@ export default {
     activeFilter: 2,
     repos: null,
     filteredRepos: [],
-    isLoading: true,
+    isLoading: false,
   }),
   async mounted() {
     this.repos = await this.getRepos();
+    // this.repo = this.items;
     this.filterBy(this.activeFilter);
   },
   methods: {
@@ -108,15 +115,16 @@ export default {
     async getRepos() {
       try {
         this.isLoading = true;
-        const { data } = await this.$http.get(
-          `${environment.githubBaseURL}/user/repos`,
-          {
-            headers: {
-              Authorization: `token ${environment.githubToken}`,
-              Accept: "application/vnd.github.v3+json",
-            },
-          }
-        );
+        // const { data } = await this.$http.get(
+        //   `${environment.githubBaseURL}/user/repos`,
+        //   {
+        //     headers: {
+        //       Authorization: `token ${environment.githubToken}`,
+        //       Accept: "application/vnd.github.v3+json",
+        //     },
+        //   }
+        // );
+        const data = this.items;
         this.isLoading = false;
         return new Promise((resolve) => {
           resolve(data);

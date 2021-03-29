@@ -1,5 +1,5 @@
-const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
-  .BundleAnalyzerPlugin;
+// const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const MomentLocalesPlugin = require("moment-locales-webpack-plugin");
 

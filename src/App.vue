@@ -22,18 +22,23 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 export default {
   name: "app",
   data: () => ({
     showBtn: false,
   }),
   created() {
+    this.getRepositories();
     window.addEventListener("scroll", this.handleScroll);
   },
   destroyed() {
     window.removeEventListener("scroll", this.handleScroll);
   },
   methods: {
+    ...mapActions("repos", {
+      getRepositories: "getRepositories",
+    }),
     handleScroll() {
       var scrollPos = window.scrollY;
       var winHeight = window.innerHeight;
