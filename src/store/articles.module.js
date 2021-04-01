@@ -2,7 +2,7 @@ import Vue from "vue";
 import environment from "../utils/environment";
 import Toast from "../utils/toast";
 
-const RepositoryModule = {
+const ArticlesModule = {
   namespaced: true,
   state: () => ({
     items: null,
@@ -13,23 +13,18 @@ const RepositoryModule = {
     },
   },
   actions: {
-    getRepositories: ({ commit }) => {
+    getArticles: ({ commit }) => {
       Vue.$http
-        .get(`${environment.githubBaseURL}/user/repos`, {
-          headers: {
-            Authorization: `token ${environment.githubToken}`,
-            Accept: "application/vnd.github.v3+json",
-          },
+        .get(`${environment.devtoBaseURL}/articles`, {
           params: {
-            per_page: 100,
+            username: "thpadelis",
           },
         })
         .then((response) => {
           commit("setItems", response.data);
         })
         .catch(() => {
-          Toast.fire({ icon: "error", title: "Failed to get repositories" });
-        //   console.log(error.response.data);
+          Toast.fire({ icon: "error", title: "Failed to get articles" });
         });
     },
   },
@@ -38,4 +33,4 @@ const RepositoryModule = {
   },
 };
 
-export default RepositoryModule;
+export default ArticlesModule;

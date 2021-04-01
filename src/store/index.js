@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import VuexPersistence from "vuex-persist";
+import ArticlesModule from "./articles.module";
 import RepositoryModule from "./repositories.module";
 
 Vue.use(Vuex);
@@ -16,6 +17,7 @@ export default new Vuex.Store({
   actions: {},
   modules: {
     repos: RepositoryModule,
+    articles: ArticlesModule,
   },
   plugins: [vuexLocal.plugin],
 });

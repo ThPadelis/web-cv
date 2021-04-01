@@ -84,7 +84,6 @@ export default {
   }),
   async mounted() {
     this.repos = await this.getRepos();
-    // this.repo = this.items;
     this.filterBy(this.activeFilter);
   },
   methods: {
@@ -115,15 +114,6 @@ export default {
     async getRepos() {
       try {
         this.isLoading = true;
-        // const { data } = await this.$http.get(
-        //   `${environment.githubBaseURL}/user/repos`,
-        //   {
-        //     headers: {
-        //       Authorization: `token ${environment.githubToken}`,
-        //       Accept: "application/vnd.github.v3+json",
-        //     },
-        //   }
-        // );
         const data = this.items;
         this.isLoading = false;
         return new Promise((resolve) => {

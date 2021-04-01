@@ -30,6 +30,7 @@ export default {
   }),
   created() {
     this.getRepositories();
+    this.getArticles();
     window.addEventListener("scroll", this.handleScroll);
   },
   destroyed() {
@@ -38,6 +39,9 @@ export default {
   methods: {
     ...mapActions("repos", {
       getRepositories: "getRepositories",
+    }),
+    ...mapActions("articles", {
+      getArticles: "getArticles",
     }),
     handleScroll() {
       var scrollPos = window.scrollY;

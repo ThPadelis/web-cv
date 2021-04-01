@@ -31,25 +31,9 @@
       </b-nav>
     </section>
     <b-container tag="section">
-      <b-row v-if="!isLoading">
-        <!-- <b-col cols="12">
-          <b-list-group flush>
-            <b-list-group-item v-for="(p,i) of posts" :key="i">
-              <a :href="p.canonical_url" target="_blank" ref="noopener">{{p.title}}</a>
-              <span>
-                <i class="far fa-heart mr-2"></i>
-                {{p.positive_reactions_count}}
-              </span>
-            </b-list-group-item>
-          </b-list-group>
-        </b-col>-->
+      <b-row v-if="items">
         <b-col cols="12">
           <post v-for="(p, i) in posts" :key="i" :post="p"></post>
-        </b-col>
-      </b-row>
-      <b-row v-else>
-        <b-col sm="12" md="12" lg="12" xl="12">
-          <loader></loader>
         </b-col>
       </b-row>
     </b-container>
@@ -60,13 +44,11 @@
 </template>
 
 <script>
-import environment from "../utils/environment";
 import { metas } from "../utils/metas";
+import { mapActions, mapGetters } from "vuex";
 export default {
   name: "portfolio",
   components: {
-    Loader: () =>
-      import(/* webpackChunkName: "loader" */ "@/components/shared/Loader.vue"),
     AppFooter: () =>
       import(
         /* webpackChunkName: "app-footer" */ "@/components/shared/Footer.vue"
@@ -74,32 +56,23 @@ export default {
     Post: () =>
       import(/* webpackChunkName: "post" */ "@/components/blog/Post.vue"),
   },
+  computed: {
+    ...mapGetters("articles", {
+      items: "items",
+    }),
+  },
   data: () => ({
-    isLoading: true,
     isAsc: true,
     sortedBy: "created_at",
     posts: [],
   }),
-  async mounted() {
-    this.posts = await this.getPosts();
+  created() {
+    this.posts = this.items;
   },
   methods: {
-    async getPosts() {
-      try {
-        this.isLoading = true;
-        const { data } = await this.$http.get(
-          `${environment.devtoBaseURL}/articles?username=thpadelis`
-        );
-        this.isLoading = false;
-        return new Promise((resolve) => {
-          resolve(data);
-        });
-      } catch (error) {
-        return new Promise((resolve, reject) => {
-          reject(error);
-        });
-      }
-    },
+    ...mapActions("articles", {
+      getItems: "getItems",
+    }),
     sortBy(property) {
       this.sortedBy = property;
       this.isAsc = !this.isAsc;
