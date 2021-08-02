@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --open",
-    "build": "vue-cli-service build --modern",
-    "lint": "vue-cli-service lint"
+    "build": "npm run generate-sitemap && vue-cli-service build --modern",
+    "lint": "vue-cli-service lint",
+    "generate-sitemap": "node src/scripts/generateSitemap.js"
   },
   "dependencies": {
     "axios": "^0.21.1",
@@ -13,6 +14,7 @@
     "bootstrap-vue": "^2.14.0",
     "core-js": "^3.6.5",
     "emailjs-com": "^2.6.4",
+    "globby": "^9.2.0",
     "moment": "^2.25.3",
     "nodemailer": "^6.4.6",
     "sweetalert2": "^10.15.7",
