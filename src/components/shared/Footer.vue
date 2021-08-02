@@ -1,13 +1,13 @@
 <template>
   <div class="footer">
-    <p>Copyright © {{year}} All right reserved</p>
+    <p>Copyright © {{ year }} All rights reserved</p>
   </div>
 </template>
 
 <script>
 export default {
   name: "app-footer",
-  data: () => ({ year: new Date().getFullYear() })
+  data: () => ({ year: new Date().getFullYear() }),
 };
 </script>
 

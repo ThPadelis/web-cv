@@ -16,7 +16,7 @@
         >
       </b-nav>
     </section>
-    <b-container tag="section">
+    <b-container tag="section" ref="repos">
       <b-row v-if="!isLoading">
         <b-col cols="12">
           <b-list-group flush>
@@ -81,6 +81,7 @@ export default {
     repos: null,
     filteredRepos: [],
     isLoading: false,
+    lastScrollPosition: 0,
   }),
   async mounted() {
     this.repos = await this.getRepos();
@@ -110,6 +111,8 @@ export default {
           this.filteredRepos = [...this.repos];
           break;
       }
+
+      this.$refs.repos.scrollTo({ top: 0, behavior: "smooth" });
     },
     async getRepos() {
       try {

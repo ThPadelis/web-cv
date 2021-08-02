@@ -17,6 +17,27 @@ body {
   opacity: 0;
 }
 
+section {
+  &::-webkit-scrollbar {
+    width: 20px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $gray-400;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+
+    &:hover {
+      background-color: $gray-500;
+    }
+  }
+}
+
 // About Page
 .about {
   background: $white;
@@ -118,9 +139,15 @@ body {
 
   section {
     padding: 30px;
+    &:nth-child(2) {
+      overflow-y: auto;
+      height: calc(100vh - 11.5em - 260px);
+    }
+
     &.bg-gray {
       background: $gray-100;
     }
+
     &:not(:last-of-type) {
       border-bottom: dashed thin $gray-500;
     }
@@ -191,10 +218,16 @@ body {
 
   section {
     padding: 30px;
+    &:nth-child(2) {
+      overflow-y: auto;
+      height: calc(100vh - 11.5em - 260px);
+    }
+
     &.row {
       padding-left: 15px;
       padding-right: 15px;
     }
+
     &:not(:last-of-type) {
       border-bottom: dashed thin $gray-500;
     }

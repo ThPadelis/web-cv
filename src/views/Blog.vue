@@ -30,7 +30,7 @@
         </b-nav-text>
       </b-nav>
     </section>
-    <b-container tag="section">
+    <b-container tag="section" ref="posts">
       <b-row v-if="items">
         <b-col cols="12">
           <post v-for="(p, i) in posts" :key="i" :post="p"></post>
@@ -85,6 +85,8 @@ export default {
           ? 1
           : -1;
       });
+
+      this.$refs.posts.scrollTo({ top: 0, behavior: "smooth" });
     },
     isSortedBy(property) {
       if (this.sortedBy === property) {
