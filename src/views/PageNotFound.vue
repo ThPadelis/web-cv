@@ -14,53 +14,52 @@
 <script>
 import { metas } from "../utils/metas";
 export default {
-  name: "page-not-found",
+  name: "PageNotFound",
   components: {
     AppFooter: () =>
       import(
         /* webpackChunkName: "app-footer" */ "@/components/shared/Footer.vue"
-      )
+      ),
   },
   metaInfo: {
-    title: "Page Not Found",
+    title: metas.titles.pageNotFound,
     meta: [
-      { name: "description", content: metas.pageNotFound.description },
+      { name: "description", content: metas.description },
       {
         property: "og:title",
-        content: "Blog ← Padelis Theodosiou | Software Developer"
+        content: "Blog ← Padelis Theodosiou | Software Developer",
       },
       {
         property: "og:site_name",
-        content: "Padelis Theodosiou | Software Developer"
+        content: "Padelis Theodosiou | Software Developer",
       },
       { property: "og:type", content: "website" },
       {
         property: "og:url",
-        content: window.location.href
+        content: window.location.href,
       },
-      { property: "og:description", content: metas.pageNotFound.description },
-
+      { property: "og:description", content: metas.description },
       // Twitter card
       { name: "twitter:card", content: "summary" },
       {
         name: "twitter:site",
-        content: window.location.href
+        content: window.location.href,
       },
       {
         name: "twitter:title",
-        content: "Page not Found ← Padelis Theodosiou | Software Developer"
+        content: "Page not Found ← Padelis Theodosiou | Software Developer",
       },
       {
         name: "twitter:description",
-        content: metas.pageNotFound.description
+        content: metas.description,
       },
       {
         itemprop: "name",
-        content: "Page not Found ← Padelis Theodosiou | Software Developer"
+        content: "Page not Found ← Padelis Theodosiou | Software Developer",
       },
-      { itemprop: "description", content: metas.pageNotFound.description }
-    ]
-  }
+      { itemprop: "description", content: metas.description },
+    ],
+  },
 };
 </script>
 

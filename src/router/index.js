@@ -39,8 +39,11 @@ const routes = [
   },
   {
     path: "*",
+    name: "PageNotFound",
     component: () =>
-      import(/* webpackChunkName: "page-not-found" */ "@/views/404.vue"),
+      import(
+        /* webpackChunkName: "page-not-found" */ "@/views/PageNotFound.vue"
+      ),
   },
 ];
 
