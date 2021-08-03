@@ -9,7 +9,10 @@
   >
     <b-card-body>
       <b-card-title class="text-center">
-        <a href="https://thpadelis.github.io/covid-19/" target="_blank"
+        <a
+          href="https://thpadelis.github.io/covid-19/"
+          target="_blank"
+          rel="noopener"
           >Covid Tracker</a
         >
       </b-card-title>

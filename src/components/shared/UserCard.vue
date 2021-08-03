@@ -20,9 +20,11 @@
           :key="i"
           :href="s.to"
           target="_blank"
+          :name="s.name"
           :class="s.class"
+          rel="noopener"
         >
-          <span :class="s.icon"></span>
+          <span :class="s.icon" :name="`${s.name}-icon`"></span>
         </b-nav-item>
       </b-nav>
     </b-card-footer>
@@ -42,16 +44,19 @@ export default {
         to: "https://github.com/thpadelis",
         icon: "fab fa-github",
         class: "github",
+        name: "github-link",
       },
       {
         to: "https://www.linkedin.com/in/padelis-theodosiou/",
         icon: "fab fa-linkedin-in",
         class: "linkedin",
+        name: "linkedin-link",
       },
       {
         to: "https://www.facebook.com/padelis.theodosiou",
         icon: "fab fa-facebook",
         class: "facebook",
+        name: "facebook-link",
       },
     ],
   }),
