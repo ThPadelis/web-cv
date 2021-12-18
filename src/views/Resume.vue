@@ -79,13 +79,13 @@ export default {
       // Primary Meta Tags
       { name: "description", content: metas.description },
       { name: "robots", content: "index, follow" },
-      { name: "author", content: "Padelis Theodosiou" },
+      { name: "author", content: "Pantelis Theodosiou" },
       // Twitter Card
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@ThPadelis" },
       {
         name: "twitter:title",
-        content: "Resume ← Padelis Theodosiou | Software Engineer",
+        content: "Resume ← Pantelis Theodosiou | Software Engineer",
       },
       { name: "twitter:description", content: metas.description },
       { name: "twitter:image", content: `${window.location.origin}/me.png` },
@@ -93,11 +93,11 @@ export default {
       { name: "og:type", content: "profile" },
       {
         name: "og:title",
-        content: "Resume ← Padelis Theodosiou | Software Engineer",
+        content: "Resume ← Pantelis Theodosiou | Software Engineer",
       },
       { name: "og:url", content: window.location.href },
       { name: "og:image", content: `${window.location.origin}/me.png` },
-      { name: "profile:first_name", content: "Padelis" },
+      { name: "profile:first_name", content: "Pantelis" },
       { name: "profile:last_name", content: "Theodosiou" },
     ],
   },

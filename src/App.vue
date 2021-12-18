@@ -75,7 +75,7 @@ export default {
       ),
   },
   metaInfo: {
-    titleTemplate: "%s ← Padelis Theodosiou | Software Developer",
+    titleTemplate: "%s ← Pantelis Theodosiou | Software Developer",
   },
 };
 </script>

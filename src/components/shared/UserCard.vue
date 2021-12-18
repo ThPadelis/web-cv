@@ -8,7 +8,7 @@
     v-sticky="{ zIndex: 1, stickyTop: 65 }"
   >
     <b-card-body>
-      <b-card-title class="text-center">Padelis Theodosiou</b-card-title>
+      <b-card-title class="text-center">Pantelis Theodosiou</b-card-title>
       <b-card-sub-title class="text-center text-muted"
         >Software Developer</b-card-sub-title
       >

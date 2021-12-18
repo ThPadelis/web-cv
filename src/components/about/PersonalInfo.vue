@@ -32,7 +32,7 @@ export default {
   name: "personal-info",
   data: () => ({
     info: [
-      { title: "Full name", text: "Padelis Theodosiou" },
+      { title: "Full name", text: "Pantelis Theodosiou" },
       { title: "Birthday", text: new Date(1995, 10, 19, 12, 30) },
       { title: "Job", text: "Software Developer" },
       { title: "Website", text: window.location.origin },

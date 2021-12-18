@@ -27,11 +27,11 @@ export default {
       { name: "description", content: metas.description },
       {
         property: "og:title",
-        content: "Blog ← Padelis Theodosiou | Software Developer",
+        content: "Blog ← Pantelis Theodosiou | Software Developer",
       },
       {
         property: "og:site_name",
-        content: "Padelis Theodosiou | Software Developer",
+        content: "Pantelis Theodosiou | Software Developer",
       },
       { property: "og:type", content: "website" },
       {
@@ -47,7 +47,7 @@ export default {
       },
       {
         name: "twitter:title",
-        content: "Page not Found ← Padelis Theodosiou | Software Developer",
+        content: "Page not Found ← Pantelis Theodosiou | Software Developer",
       },
       {
         name: "twitter:description",
@@ -55,7 +55,7 @@ export default {
       },
       {
         itemprop: "name",
-        content: "Page not Found ← Padelis Theodosiou | Software Developer",
+        content: "Page not Found ← Pantelis Theodosiou | Software Developer",
       },
       { itemprop: "description", content: metas.description },
     ],
