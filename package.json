@@ -16,7 +16,7 @@
     "core-js": "^3.6.5",
     "emailjs-com": "^2.6.4",
     "globby": "^9.2.0",
-    "moment": "^2.25.3",
+    "moment": "^2.29.2",
     "nodemailer": "^6.4.6",
     "sweetalert2": "^10.15.7",
     "uuid": "^8.0.0",
